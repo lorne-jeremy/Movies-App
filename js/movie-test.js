@@ -1,19 +1,29 @@
 //Create
 
-    $(document).ready(() => {
-        alert("yo");
+$(document).ready(() => {
+    $('#searchForm').on('submit', (e) => {
+        let searchText = $('#searchText').val();
+        postMovies(searchText);
+        e.preventDefault();
+    });
 });
 
-// const movieURL = 'https://pricey-decisive-aragosaurus.glitch.me/movies';
-// let moviesToPost = {
-//     title: '',
-//     rating: ''
-// }
-//
+function postMovies(searchText){
+let moviesToPost = {
+    title: searchText,
+    rating: ''
+}
+   console.log(moviesToPost)
+}
+
+
+
+const movieURL = 'https://pricey-decisive-aragosaurus.glitch.me/movies';
+
 // const postOptions = {
 //     method:'POST',
 //     headers:{'Content-Type': 'application/json'},
-//     body:JSON.stringify(moviesToPost)
+//     body:JSON.stringify(moviesToPost())
 // }
 // let movietitle = document.getElementById("movie")
 // let rate = $('#rating').innerText
@@ -36,6 +46,3 @@
 // // fetch(movieURL,postOptions).then(getMovies)
 //
 // const movies = getMovies();
-
-
-
